@@ -3,7 +3,7 @@ import threading
 class disjointSet:
   def __init__(self, number):
     self.set = [x for x in range(1, number+1)]# assigning from 1 to n
-    self.rank = [0 fro x in range(number)]
+    self.rank = [0 for x in range(number)]
     
   def find(self, i):
     # in path compresssion actually at each time we are seaching the parent or id we asr assigning the parent id to it's children actually and then returning the set id or parent
@@ -43,7 +43,7 @@ def main():
     if userInput == 1:
       dis_set.union([int(x) for x in input('give two elements to union --> \t').split()])
     elif userInput ==2:
-      print(dis_set.set[int(input('element whose set_id_to be found-->\t'))])
+      print(dis_set.find(int(input('element whose set_id_to be found-->\t'))-1))
     elif userInput==3:
       print(*dis_set.set, sep='\t')
       print(*dis_set.rank, sep='\t')
