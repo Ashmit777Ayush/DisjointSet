@@ -10,8 +10,8 @@ class disjointSet:
     return self.set[i]
   
   def union(self, *args):
-    x_id = self.find(args[0])# find the set to which it belongs to 
-    y_id = self.find(args[1])# for y also find the set to which it belongs
+    x_id = self.find(args[0][0]-1)# find the set to which it belongs to 
+    y_id = self.find(args[0][1]-1)# for y also find the set to which it belongs
     
     if x_id==y_id:# this means that both belongs to the same set
       return 
@@ -39,7 +39,7 @@ def main():
     if userInput == 1:
       dis_set.union([int(x) for x in input('give two elements to union --> \t').split()])
     elif userInput ==2:
-      print(dis_set.find(int(input('give element to be found -->\t'))))
+      print(dis_set.find(int(input('give element to be found -->\t'))-1))
     elif userInput==3:
       print(*dis_set.set, sep='\t')
     elif userInput==4:
